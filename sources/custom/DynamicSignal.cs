@@ -403,7 +403,7 @@ namespace Gst
 				Type expected_type = (Type)query.param_types [i];
 				Type given_type = parameters [i].GetType ();
 
-				if (expected_type != given_type && !given_type.IsSubclassOf (given_type))
+				if (expected_type != given_type && !given_type.IsSubclassOf (expected_type))
 					throw new ApplicationException (String.Format ("Invalid parameter type: expected {0}, got {1}", expected_type, given_type));
 
 				signal_parameters [i + 1] = new GLib.Value (parameters [i]);
